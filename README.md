@@ -1,8 +1,9 @@
 # Simple apps created to learn how to build multplatform apps with Flutter framework
 
 ## Created apps
-* [BMI calulator](/https://github.com/Leonardov31/flutter-projects/tree/master/bmi_calculator)
-* [Movies Info app](https://github.com/Leonardov31/flutter-projects/tree/master/movies)
-* [Simple Web SignUp page](https://github.com/Leonardov31/flutter-projects/tree/master/signup_web)
+* [BMI calulator](/bmi_calculator)
+* [Movies Info app](/movies)
+* [Simple Web SignUp page](/signup_web)
 
-# 
+## BMI Calculator
+[](/readme_files/bmi_calculator.mp4)
