@@ -6,4 +6,4 @@
 * [Simple Web SignUp page](/signup_web)
 
 ## BMI Calculator
-[](/readme_files/bmi_calculator.mp4)
+[](/readme_files/bmi_calculator.gif)
