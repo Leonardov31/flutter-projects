@@ -9,8 +9,8 @@
     <td><a href = "/movies">Movies Info</a></td>
   </tr>
   <tr>
-    <td><img src="/demos/demo_1.gif" height=400></td>
-    <td><img src="/demos/demo_2.gif" height=400></td>
-    <td><img src="/demos/demo_3.gif" height=400></td>
+    <td><img src="/demos/demo_1.gif" height=480></td>
+    <td><img src="/demos/demo_2.gif" height=480></td>
+    <td><img src="/demos/demo_3.gif" height=480></td>
   </tr>
  </table>
