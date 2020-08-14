@@ -26,7 +26,7 @@ class _CountDownTimerState extends State<CountDownTimer>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 20),
     );
   }
 
@@ -47,7 +47,7 @@ class _CountDownTimerState extends State<CountDownTimer>
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  color: Colors.amber,
+                  color: Colors.blue[300],
                   height: controller.value * MediaQuery.of(context).size.height,
                 ),
               ),
