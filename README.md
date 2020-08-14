@@ -1,4 +1,4 @@
-# Apps created to learn how to build multplatform apps with Flutter framework
+# Apps created to learn how to build multi platform apps with Flutter framework.
 
 ## Created apps
 * [BMI calulator](/bmi_calculator)
