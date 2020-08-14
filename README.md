@@ -4,6 +4,3 @@
 * [BMI calulator](/bmi_calculator)
 * [Movies Info app](/movies)
 * [Simple Web SignUp page](/signup_web)
-
-## BMI Calculator
-[](/readme_files/bmi_calculator.gif)
