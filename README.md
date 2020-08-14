@@ -4,9 +4,9 @@
 
 <table>
   <tr>
-    <td>BMI Calculator</td>
-     <td>CountDown Timer</td>
-     <td>Movies</td>
+    <td><a href = "/bmi_calculator">BMI Calculator</a></td>
+    <td><a href = "/countdown_timer">CountDown Timer</a></td>
+    <td><a href = "/movies">Movies Info</a></td>
   </tr>
   <tr>
     <td><img src="/demos/demo_1.gif" height=480></td>
