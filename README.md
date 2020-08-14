@@ -1,16 +1,12 @@
 # Apps created to learn how to build multi platform apps with Flutter framework.
 
 ## Created apps
-* [BMI Calulator](/bmi_calculator)
-* [CountDown Timer](/countdown_timer)
-* [Movies Info app](/movies)
-* [Productivity Timer](/productivity_timer)
 
-### BMI Calculator
-![demo_1](/demos/demo_1.gif)
+### [BMI Calulator](/bmi_calculator)
+<img src = "/demos/demo_1.gif" alt = "demo 1" height = 550>
 
-### CountDown Timer
-![demo_2](/demos/demo_2.gif)
+### [CountDown Timer](/countdown_timer)
+<img src = "/demos/demo_2.gif" alt = "demo 2" height = 550>
 
-### Movies Info
-![demo_3](/demos/demo_3.gif)
+### [Movies Info app](/movies)
+<img src = "/demos/demo_3.gif" alt = "demo 3" height = 550>
