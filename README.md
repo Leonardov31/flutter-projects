@@ -3,7 +3,7 @@
 ## Created apps
 
 ### [BMI Calulator](/bmi_calculator)
-<img src = "/demos/demo_1.gif" alt = "demo 1" height = 550>
+![](/demos/demo_1.gif)
 
 ### [CountDown Timer](/countdown_timer)
 <img src = "/demos/demo_2.gif" alt = "demo 2" height = 550>
