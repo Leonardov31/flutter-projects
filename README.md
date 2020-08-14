@@ -2,11 +2,11 @@
 
 ## Created apps
 
-[BMI Calulator](/bmi_calculator)
+![BMI Calulator](/bmi_calculator)
 ![](/demos/demo_1.gif)
 
-[CountDown Timer](/countdown_timer)
+![CountDown Timer](/countdown_timer)
 ![](/demos/demo_2.gif)
 
-[Movies Info app](/movies)
+![Movies Info app](/movies)
 ![](/demos/demo_3.gif)
