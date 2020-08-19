@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:productivity_timer/components/custom_button.dart';
 import 'package:productivity_timer/components/settings_button.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -23,8 +22,22 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  TextStyle textStyle =
-      TextStyle(fontSize: 24, color: Color.fromARGB(255, 242, 242, 242));
+  TextEditingController txtWork;
+  TextEditingController txtShort;
+  TextEditingController txtLong;
+
+  initState() {
+    txtWork = TextEditingController();
+    txtShort = TextEditingController();
+    txtLong = TextEditingController();
+    super.initState();
+  }
+
+  TextStyle textStyle = TextStyle(
+    fontSize: 24,
+    color: Color.fromARGB(255, 242, 242, 242),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Container(
