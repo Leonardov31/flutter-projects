@@ -107,19 +107,19 @@ class _TimerHomePageState extends State<TimerHomePage>
               children: [
                 CustomButton(
                   text: 'Work',
-                  color: Colors.pink[600],
+                  color: Colors.pink[800],
                   onPressed: setTimeWork,
                 ),
                 SizedBox(width: 10.0),
                 CustomButton(
                   text: 'Short Break',
-                  color: Colors.blue[600],
+                  color: Colors.blue[800],
                   onPressed: () => setBreak(true),
                 ),
                 SizedBox(width: 10.0),
                 CustomButton(
                   text: 'Long Break',
-                  color: Colors.amber[600],
+                  color: Colors.amber[800],
                   onPressed: () => setBreak(false),
                 ),
               ],
@@ -148,8 +148,8 @@ class _TimerHomePageState extends State<TimerHomePage>
                   animation: controller,
                   builder: (BuildContext context, Widget child) {
                     return CustomButton(
-                      text: !controller.isAnimating ? 'Stop' : 'Start',
-                      color: Colors.red[600],
+                      text: !controller.isAnimating ? 'Start' : 'Stop',
+                      color: Colors.red[800],
                       onPressed: startOrStopTimer,
                     );
                   },
@@ -157,10 +157,9 @@ class _TimerHomePageState extends State<TimerHomePage>
                 SizedBox(width: 10.0),
                 CustomButton(
                   text: 'Restart',
-                  color: Colors.green[600],
+                  color: Colors.green[800],
                   onPressed: () {
-                    print(controller.value);
-                    controller.reverse(from: controller.value = 1.0);
+                    controller.reset();
                   },
                 ),
               ],

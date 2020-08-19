@@ -41,7 +41,7 @@ class _SettingsState extends State<Settings> {
           Text(''),
           SettinsButton(
             text: '-',
-            color: Colors.pink[600],
+            color: Colors.pink[800],
             onPressed: () {},
           ),
           TextField(
@@ -51,7 +51,7 @@ class _SettingsState extends State<Settings> {
           ),
           SettinsButton(
             text: '+',
-            color: Colors.pink[600],
+            color: Colors.pink[800],
             onPressed: () {},
           ),
           Text('Short', style: textStyle),
@@ -59,7 +59,7 @@ class _SettingsState extends State<Settings> {
           Text(''),
           SettinsButton(
             text: '-',
-            color: Colors.blue[600],
+            color: Colors.blue[800],
             onPressed: () {},
           ),
           TextField(
@@ -69,7 +69,7 @@ class _SettingsState extends State<Settings> {
           ),
           SettinsButton(
             text: '+',
-            color: Colors.blue[600],
+            color: Colors.blue[800],
             onPressed: () {},
           ),
           Text('Long', style: textStyle),
@@ -77,7 +77,7 @@ class _SettingsState extends State<Settings> {
           Text(''),
           SettinsButton(
             text: '-',
-            color: Colors.amber[600],
+            color: Colors.amber[800],
             onPressed: () {},
           ),
           TextField(
@@ -87,7 +87,7 @@ class _SettingsState extends State<Settings> {
           ),
           SettinsButton(
             text: '+',
-            color: Colors.amber[600],
+            color: Colors.amber[800],
             onPressed: () {},
           ),
         ],
