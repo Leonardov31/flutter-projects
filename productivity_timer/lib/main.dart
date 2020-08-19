@@ -30,6 +30,7 @@ class _TimerHomePageState extends State<TimerHomePage>
   int _work = 30;
   int _shortBreak = 5;
   int _longBreak = 20;
+  bool _isAnimating = false;
 
   @override
   void initState() {
@@ -46,9 +47,11 @@ class _TimerHomePageState extends State<TimerHomePage>
   }
 
   void startOrStopTimer() {
-    if (controller.isAnimating)
+    if (controller.isAnimating) {
+      _isAnimating = false;
       controller.stop();
-    else {
+    } else {
+      _isAnimating = true;
       controller.reverse(
         from: controller.value == 0.0 ? 1.0 : controller.value,
       );
@@ -84,14 +87,17 @@ class _TimerHomePageState extends State<TimerHomePage>
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
               color: Color.fromARGB(255, 242, 242, 242),
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return SettingsScreen();
-                  },
-                ),
-              ),
+              onPressed: () {
+                controller.stop();
+                return Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return SettingsScreen();
+                    },
+                  ),
+                );
+              },
               icon: Icon(Icons.settings),
             ),
           ),
@@ -148,7 +154,7 @@ class _TimerHomePageState extends State<TimerHomePage>
                   animation: controller,
                   builder: (BuildContext context, Widget child) {
                     return CustomButton(
-                      text: !controller.isAnimating ? 'Start' : 'Stop',
+                      text: _isAnimating == true ? 'Start' : 'Stop',
                       color: Colors.red[800],
                       onPressed: startOrStopTimer,
                     );
@@ -156,7 +162,7 @@ class _TimerHomePageState extends State<TimerHomePage>
                 ),
                 SizedBox(width: 10.0),
                 CustomButton(
-                  text: 'Restart',
+                  text: 'Reset',
                   color: Colors.green[800],
                   onPressed: () {
                     controller.reset();
