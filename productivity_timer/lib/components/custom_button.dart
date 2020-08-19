@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: MaterialButton(
-        padding: EdgeInsets.symmetric(vertical: 16),
+        padding: EdgeInsets.symmetric(vertical: 14),
         onPressed: this.onPressed,
         elevation: 0,
         color: this.color,
@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 242, 242, 242),
+            color: Color.fromARGB(255, 240, 240, 240),
           ),
         ),
         shape: RoundedRectangleBorder(
