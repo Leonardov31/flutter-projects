@@ -30,7 +30,6 @@ class _TimerHomePageState extends State<TimerHomePage>
   int _work = 30;
   int _shortBreak = 5;
   int _longBreak = 20;
-  bool _isAnimating = false;
 
   @override
   void initState() {
@@ -48,10 +47,8 @@ class _TimerHomePageState extends State<TimerHomePage>
 
   void startOrStopTimer() {
     if (controller.isAnimating) {
-      _isAnimating = false;
       controller.stop();
     } else {
-      _isAnimating = true;
       controller.reverse(
         from: controller.value == 0.0 ? 1.0 : controller.value,
       );
@@ -130,22 +127,17 @@ class _TimerHomePageState extends State<TimerHomePage>
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Expanded(
-                child: AspectRatio(
-                  aspectRatio: 1.0,
-                  child: Stack(
-                    children: [
-                      Positioned.fill(
-                        child: buildAnimatedBuilderCircle(),
-                      ),
-                      Align(
-                        child: buildAnimatedBuilderText(),
-                      )
-                    ],
+            AspectRatio(
+              aspectRatio: 1.0,
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: buildAnimatedBuilderCircle(),
                   ),
-                ),
+                  Align(
+                    child: buildAnimatedBuilderText(),
+                  )
+                ],
               ),
             ),
             Row(
@@ -154,7 +146,7 @@ class _TimerHomePageState extends State<TimerHomePage>
                   animation: controller,
                   builder: (BuildContext context, Widget child) {
                     return CustomButton(
-                      text: _isAnimating == true ? 'Start' : 'Stop',
+                      text: controller.isAnimating ? 'Pause' : 'Start',
                       color: Colors.red[800],
                       onPressed: startOrStopTimer,
                     );
@@ -202,7 +194,7 @@ class _TimerHomePageState extends State<TimerHomePage>
           painter: CustomTimerPainter(
             animation: controller,
             backgroundColor: Colors.blue[200],
-            color: Color.fromARGB(255, 0, 10, 36),
+            color: Colors.black54,
           ),
         );
       },
