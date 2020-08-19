@@ -16,7 +16,7 @@ class CustomTimerPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
       ..color = backgroundColor
-      ..strokeWidth = 14.0
+      ..strokeWidth = 15.0
       ..strokeCap = StrokeCap.square
       ..style = PaintingStyle.stroke;
 
@@ -25,7 +25,7 @@ class CustomTimerPainter extends CustomPainter {
     paint.color = color;
     paint.strokeWidth = 15;
 
-    double progress = (1.0 - animation.value) * 2 * pi;
+    double progress = (1 - animation.value) * 2 * pi;
     canvas.drawArc(Offset.zero & size, pi * 1.5, -progress, false, paint);
   }
 
