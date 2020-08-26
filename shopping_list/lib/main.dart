@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/ui/items_screen.dart';
 import './utils/dbhelper.dart';
 import './models/list_items.dart';
 import './models/shopping_list.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shoppping List',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: Scaffold(
         appBar: AppBar(title: Text('Shopping List')),
@@ -28,22 +29,40 @@ class Shlist extends StatefulWidget {
 
 class _ShlistState extends State<Shlist> {
   DbHelper helper = DbHelper();
+  List<ShoppingList> shoppingList;
 
   Future showData() async {
     await helper.openDb();
-    ShoppingList list = ShoppingList(0, 'Bakery', 2);
-    int listId = await helper.insertList(list);
+    shoppingList = await helper.getLists();
 
-    ListItem item = ListItem(0, listId, 'Bread', 'note', '1 kg');
-    int itemId = await helper.insertItem(item);
-
-    print('List Id: ' + listId.toString());
-    print('Item Id: ' + itemId.toString());
+    setState(() {
+      shoppingList = shoppingList;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     showData();
-    return Container();
+    return ListView.builder(
+      itemCount: (shoppingList != null) ? shoppingList.length : 0,
+      itemBuilder: (BuildContext context, int index) {
+        return ListTile(
+          title: Text(shoppingList[index].name),
+          leading: CircleAvatar(
+            child: Text(shoppingList[index].priority.toString()),
+          ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ItemsScreen(
+                  shoppingList: shoppingList[index],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 }
