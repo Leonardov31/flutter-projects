@@ -7,6 +7,13 @@ class DbHelper {
   final int version = 1;
   Database db;
 
+  static final DbHelper _dbHelper = DbHelper._internal();
+  DbHelper._internal();
+
+  factory DbHelper() {
+    return _dbHelper;
+  }
+
   Future<Database> openDb() async {
     if (db == null) {
       db = await openDatabase(

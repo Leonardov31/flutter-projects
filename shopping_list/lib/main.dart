@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/ui/items_screen.dart';
+import 'package:shopping_list/ui/shopping_list_dialog.dart';
 import './utils/dbhelper.dart';
-import './models/list_items.dart';
 import './models/shopping_list.dart';
 
 void main() => runApp(MyApp());
@@ -30,6 +30,13 @@ class Shlist extends StatefulWidget {
 class _ShlistState extends State<Shlist> {
   DbHelper helper = DbHelper();
   List<ShoppingList> shoppingList;
+  ShoppingListDialog dialog;
+
+  @override
+  void initState() {
+    dialog = ShoppingListDialog();
+    super.initState();
+  }
 
   Future showData() async {
     await helper.openDb();
@@ -61,6 +68,19 @@ class _ShlistState extends State<Shlist> {
               ),
             );
           },
+          trailing: IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => dialog.buildDialog(
+                  context,
+                  shoppingList[index],
+                  false,
+                ),
+              );
+            },
+          ),
         );
       },
     );
