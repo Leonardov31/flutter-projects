@@ -55,4 +55,22 @@ class DbHelper {
       );
     });
   }
+
+  Future<List<ListItem>> getItems(int idList) async {
+    final List<Map<String, dynamic>> maps = await db.query(
+      'items',
+      where: 'idList = ?',
+      whereArgs: [idList],
+    );
+
+    return List.generate(maps.length, (i) {
+      return ListItem(
+        maps[i]['id'],
+        maps[i]['idList'],
+        maps[i]['name'],
+        maps[i]['quantity'],
+        maps[i]['note'],
+      );
+    });
+  }
 }
