@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text('Shopping List')),
-        body: Shlist(),
-      ),
+      home: Shlist(),
     );
   }
 }
@@ -50,39 +47,55 @@ class _ShlistState extends State<Shlist> {
   @override
   Widget build(BuildContext context) {
     showData();
-    return ListView.builder(
-      itemCount: (shoppingList != null) ? shoppingList.length : 0,
-      itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text(shoppingList[index].name),
-          leading: CircleAvatar(
-            child: Text(shoppingList[index].priority.toString()),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ItemsScreen(
-                  shoppingList: shoppingList[index],
-                ),
-              ),
-            );
-          },
-          trailing: IconButton(
-            icon: Icon(Icons.edit),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) => dialog.buildDialog(
-                  context,
-                  shoppingList[index],
-                  false,
+    return Scaffold(
+      appBar: AppBar(title: Text('Shopping List')),
+      body: ListView.builder(
+        itemCount: (shoppingList != null) ? shoppingList.length : 0,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(shoppingList[index].name),
+            leading: CircleAvatar(
+              child: Text(shoppingList[index].priority.toString()),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ItemsScreen(
+                    shoppingList: shoppingList[index],
+                  ),
                 ),
               );
             },
-          ),
-        );
-      },
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => dialog.buildDialog(
+                    context,
+                    shoppingList[index],
+                    false,
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) => dialog.buildDialog(
+              context,
+              ShoppingList(0, "", 0),
+              true,
+            ),
+          );
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
