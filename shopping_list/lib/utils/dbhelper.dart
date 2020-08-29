@@ -20,7 +20,7 @@ class DbHelper {
         join(await getDatabasesPath(), 'shopping.db'),
         onCreate: (database, version) {
           database.execute(
-            'CREATE TABLE lists(id INTEGER PRIMARY KEY, nmae TEXT, priority INTEGER)',
+            'CREATE TABLE lists(id INTEGER PRIMARY KEY, name TEXT, priority INTEGER)',
           );
           database.execute(
             'CREATE TABLE items(id INTEGER PRIMARY KEY, idList INTEGER, nmae TEXT, quantity TEXT, note TEXT, ' +
