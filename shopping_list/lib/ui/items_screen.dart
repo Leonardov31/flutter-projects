@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/ui/list_item_dialog.dart';
 import '../models/list_items.dart';
 import '../models/shopping_list.dart';
 import '../utils/dbhelper.dart';
@@ -15,6 +16,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
   DbHelper helper;
   List<ListItem> items;
   final ShoppingList shoppingList;
+  ListItemDialog dialog = new ListItemDialog();
 
   Future showData(int idList) async {
     await helper.openDb();
@@ -44,10 +46,30 @@ class _ItemsScreenState extends State<ItemsScreen> {
             onTap: () {},
             trailing: IconButton(
               icon: Icon(Icons.edit),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) =>
+                      dialog.buildAlert(context, items[index], false),
+                );
+              },
             ),
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) => dialog.buildAlert(
+              context,
+              ListItem(0, shoppingList.id, '', '', ''),
+              true,
+            ),
+          );
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.pink,
       ),
     );
   }
