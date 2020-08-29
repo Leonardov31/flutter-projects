@@ -38,21 +38,37 @@ class _ItemsScreenState extends State<ItemsScreen> {
       body: ListView.builder(
         itemCount: (items != null) ? items.length : 0,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(items[index].name),
-            subtitle: Text(
-              'Quantity: ${items[index].quantity} - Note: ${items[index].note}',
-            ),
-            onTap: () {},
-            trailing: IconButton(
-              icon: Icon(Icons.edit),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) =>
-                      dialog.buildAlert(context, items[index], false),
-                );
-              },
+          return Dismissible(
+            key: Key(items[index].name),
+            onDismissed: (direction) {
+              String strName = items[index].name;
+              helper.deleteItem(items[index]);
+              setState(() {
+                items.removeAt(index);
+              });
+              Scaffold.of(context).showSnackBar(
+                SnackBar(content: Text("$strName deleted")),
+              );
+            },
+            child: ListTile(
+              title: Text(items[index].name),
+              subtitle: Text(
+                'Quantity: ${items[index].quantity} - Note: ${items[index].note}',
+              ),
+              onTap: () {},
+              trailing: IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => dialog.buildAlert(
+                      context,
+                      items[index],
+                      false,
+                    ),
+                  );
+                },
+              ),
             ),
           );
         },
@@ -69,7 +85,6 @@ class _ItemsScreenState extends State<ItemsScreen> {
           );
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.pink,
       ),
     );
   }
