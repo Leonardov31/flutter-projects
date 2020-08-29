@@ -17,7 +17,7 @@ class ShoppingListDialog {
     return AlertDialog(
       title: Text((isNew) ? 'New Shopping list' : 'Edit shopping list'),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(15.0),
       ),
       content: SingleChildScrollView(
         child: Column(
