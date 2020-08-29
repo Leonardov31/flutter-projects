@@ -34,6 +34,14 @@ class DbHelper {
     return db;
   }
 
+  Future<int> deleteList(ShoppingList list) async {
+    int result =
+        await db.delete('items', where: "idList = ?", whereArgs: [list.id]);
+    result = await db.delete("lists", where: "id = ?", whereArgs: [list.id]);
+
+    return result;
+  }
+
   Future<int> insertList(ShoppingList list) async {
     int id = await this.db.insert(
           'lists',
