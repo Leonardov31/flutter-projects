@@ -23,7 +23,7 @@ class DbHelper {
             'CREATE TABLE lists(id INTEGER PRIMARY KEY, name TEXT, priority INTEGER)',
           );
           database.execute(
-            'CREATE TABLE items(id INTEGER PRIMARY KEY, idList INTEGER, nmae TEXT, quantity TEXT, note TEXT, ' +
+            'CREATE TABLE items(id INTEGER PRIMARY KEY, idList INTEGER, name TEXT, quantity TEXT, note TEXT, ' +
                 'FOREIGN KEY(idList) REFERENCES lists(id))',
           );
         },
