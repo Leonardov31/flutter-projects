@@ -9,6 +9,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="treasure_map"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA1eODbKbPeSQL0E3errN5yiAwbGH5Fw1A" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
