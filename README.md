@@ -16,7 +16,7 @@
   </tr>
   
   <tr>
-    <th><a href = "/shopping_list">Movies Info</a></th>
+    <th><a href = "/shopping_list">Shopping List</a></th>
     <th><a href = "/flash-chat-flutter">Flash Chat Flutter</a></th>
   </tr>
   <tr>
