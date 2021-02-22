@@ -10,9 +10,9 @@
     
   </tr>
   <tr>
-    <td><img src="/demos/demo_1.gif" height=60%></td>
-    <td><img src="/demos/demo_2.gif" height=60%></td>
-    <td><img src="/demos/demo_3.gif" height=60%></td>
+    <td><img src="/demos/demo_1.gif" height=50%></td>
+    <td><img src="/demos/demo_2.gif" height=50%></td>
+    <td><img src="/demos/demo_3.gif" height=50%></td>
   </tr>
   
   <tr>
