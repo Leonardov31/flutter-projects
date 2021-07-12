@@ -10,9 +10,9 @@
     
   </tr>
   <tr>
-    <td><img src="/demos/demo_1.gif" height=50%></td>
-    <td><img src="/demos/demo_2.gif" height=50%></td>
-    <td><img src="/demos/demo_3.gif" height=50%></td>
+    <td><img src="/demos/demo_1.gif" width=25%></td>
+    <td><img src="/demos/demo_2.gif" width=25%></td>
+    <td><img src="/demos/demo_3.gif" width=25%></td>
   </tr>
   
   <tr>
@@ -20,7 +20,7 @@
     <th><a href = "/flash-chat-flutter">Flash Chat Flutter</a></th>
   </tr>
   <tr>
-    <td><img src="/demos/demo_4.gif" height=50%></td>
-    <td><img src="https://github.com/londonappbrewery/Images/blob/master/flash_chat_flutter_demo.gif" height=50%></td>
+    <td><img src="/demos/demo_4.gif" width=25%></td>
+    <td><img src="https://github.com/londonappbrewery/Images/blob/master/flash_chat_flutter_demo.gif" width=25%></td>
   </tr>
  </table>
